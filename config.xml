@@ -2,10 +2,10 @@
 <widget id="com.infinitude.ireport" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>iReport</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        A mobile application to aid INEC collect data from the general public
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author href="http://infinitude.co" email="support@infinitude.co">
+        Infinitude Technologies
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
