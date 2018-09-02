@@ -1,0 +1,244 @@
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .app {
+        padding: 97% 50px 0px 50px !important;
+    }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .app {
+        padding: 97% 50px 0px 50px !important;
+    }
+
+}
+
+.app {
+    padding: 97% 50px 0px 50px !important;
+}
+
+.card-raised {
+    box-shadow: 0px 1px 16px #c2c2c2;
+}
+
+.form-control{
+    height: 140px;
+    font-size: 30px !important;
+    border-radius: 0px;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+.form-group {
+    margin-bottom: 0px;
+}
+.border-bottom{
+    border-bottom: #c2c2c2 1px solid;
+}
+.form-check-label{
+    text-transform: capitalize;
+}
+
+.btn-primary{
+    background: #0E6823;
+    color: #fff;
+    height: 100px;
+    font-size: 40px !important;
+    width: 100%;
+}
+
+.app-color{
+    color: #0E6823;
+}
+
+.bg-app-color{
+    background: #0E6823;
+}
+
+.bg-white{
+    background: #fff;
+}
+
+.txt-cap{
+    text-transform: capitalize;
+}
+
+.txt-lower{
+    text-transform: lowercase;
+}
+.txt-upper{
+    text-transform: uppercase;
+}
+.txt-white{
+    color: #fff;
+}
+.nav-tabs{
+    border-top: 1px solid #c2c2c2;
+}
+.nav-tabs:not(.nav-tabs-neutral)>.nav-item>.nav-link.active {
+    box-shadow: none;
+}
+.nav-tabs>.nav-item>.nav-link.active {
+    background-color: #fff0;
+    border-radius: 0px;
+    color: #0E6823;
+}
+.nav-tabs>.nav-item>.nav-link {
+    border-radius: 0px;
+    font-size: 30px;
+}
+
+.report-card{
+    height: 89vh;
+    margin-left: 8px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+.ff {
+    border-left: 20px solid #00a44d;
+}
+
+.vr {
+    border-left: 20px solid #5548ff;
+}
+
+.vb {
+    border-left: 20px solid #5accc1;
+}
+
+.bs {
+    border-left: 20px solid #080020;
+}
+
+.vio {
+    border-left: 20px solid #a70000;
+}
+
+.imp {
+    border-left: 20px solid #7f00a4;
+}
+
+.incidence-card{
+    height: 75px;
+    padding-left: 15px;
+    padding-top: 13px;
+    font-size: 32px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.incidence-card-box{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    opacity: 0.4;
+}
+
+textarea.form-control {
+    max-height: 100px;
+    border-bottom: 1px solid #737373;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+}
+.btn-default, .btn-default:focus{
+    height: 86px;
+    font-size: 35px;
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: 0px 1px 16px #c2c2c2;
+    padding-top: 15px;
+}
+.bootstrap-select.btn-group .dropdown-menu.inner {
+    font-size: 35px !important;
+}
+
+.report-list-nav{
+    height: 76px;
+    font-size: 40px;
+    border-bottom: #000 solid 1px;
+}
+
+.nav-pills.nav-pills-primary .nav-item .nav-link.active, .nav-pills.nav-pills-primary .nav-item .nav-link.active:focus, .nav-pills.nav-pills-primary .nav-item .nav-link.active:hover {
+    background-color: #fff0;
+    color: #000;
+    box-shadow: none;
+    border-bottom: #0E6823 solid 10px;
+    border-radius: 0px;
+    padding-bottom: 0px;
+}
+
+.nav-pills .nav-item .nav-link {
+    background-color: #fff0;
+    border-radius: 0px !important;
+    color: #0000008f;
+}
+.bg-ash{
+    background: #f8f9fa !important;
+}
+
+.img-box{
+    border-radius: 50%;
+    border: 2px solid #123;
+}
+.btn-primary:hover, .btn-primary:focus{
+    background: #0E6823 !important;
+    color: #fff;
+}
+
+.form-control:focus {
+    border: 1px solid #0E6823;
+}
+.text-success{
+    color: #0E6823 !important;
+}

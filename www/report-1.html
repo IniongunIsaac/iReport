@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report-1</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/now-ui-kit.css">
+    <link rel="stylesheet" href="css/ireport.css">
+    <link rel="stylesheet" href="css/font-sizes.css">
+    <link rel="stylesheet" href="css/margin-bottom.css">
+    <link rel="stylesheet" href="css/margin-top.css">
+    <link rel="stylesheet" href="css/padding-bottom.css">
+    <link rel="stylesheet" href="css/padding-top.css">
+    <link rel="stylesheet" href="css/heights.css">
+    <link rel="stylesheet" href="css/padding.css">
+    <link rel="stylesheet" href="css/widths.css">
+</head>
+<body class="bg-white">
+
+<div class="row h-140 bg-app-color p-40">
+    <div class="col-sm-6 text-left"><h3 class="txt-white txt-cap fs-40">Report</h3></div>
+    <div class="col-sm-6 text-right">
+        <img src="img/placeholder_person.png" alt="" style="width: 70px; height: 70px;"> <span class="txt-white fs-25">123456FF</span>
+    </div>
+</div>
+
+<div class="card card-raised m-t-80 m-b-0 report-card p-30">
+    <div class="card-body">
+        <div class="row">
+
+            <div class="col-sm-12"><h2 class="fs-38">Situation Report</h2></div>
+
+            <div class="col-sm-4">
+                <div class="card card-raised incidence-card-box" data-incidence="Free & Fair">
+                    <div class="ff incidence-card">Free &amp; Fair</span></div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-raised incidence-card-box" data-incidence="Ballot Theft">
+                    <div class="bs incidence-card">Ballot Snatching</span></div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-raised incidence-card-box" data-incidence="Impersonation">
+                    <div class="imp incidence-card">Impersonation</span></div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-raised incidence-card-box" data-incidence="Vote Rigging">
+                    <div class="vr incidence-card">Vote Rigging</span></div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-raised incidence-card-box" data-incidence="Violence">
+                    <div class="vio incidence-card">Violence</span></div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-raised incidence-card-box" data-incidence="Vote Buying">
+                    <div class="vb incidence-card">Vote Buying</span></div>
+                </div>
+            </div>
+            <div class="col-sm-12"><small id="incidenceHelp" class="form-text text-muted text-danger fs-22">Please select an Incidence.</small></div>
+
+            <div class="col-sm-12 m-t-40"><h2 class="fs-38">Write short description</h2></div>
+
+            <div class="col-sm-12">
+                <textarea class="form-control" name="description" id="description" rows="4" cols="80" placeholder="Text..."></textarea>
+                <div class="invalid-feedback fs-20 text-left">
+                    Please enter a valid report description
+                </div>
+            </div>
+
+            <div class="col-sm-12 m-t-80">
+                <h2 class="fs-38">Attach Media</h2>
+                <img src="img/AttachMedia.png" alt="" class="h-120">
+            </div>
+
+            <div class="col-sm-12 m-t-80">
+                <h2 class="fs-38 m-b-15">Choose Location</h2>
+                <select class="selectpicker" data-size="7" data-style="btn btn-default" title="Location">
+                    <option disabled selected>Oba Ile, Akure</option>
+                    <option value="2">Ondo</option>
+                    <option value="3">Lagos</option>
+                </select>
+            </div>
+
+            <div class="col-sm-12 m-t-80"><h2 class="fs-38">Rate INEC's Performance</h2></div>
+            <div class="col-sm-2 text-center">
+                <img src="img/ExcellentAsh.png" alt="" id="ExcellentRating" class="h-110 rating" data-rating="5">
+                <h3 class="m-t-10">Excellent</h3>
+            </div>
+            <div class="col-sm-2 text-center">
+                <img src="img/GoodAsh.png" alt="" id="GoodRating" class="h-110 rating" data-rating="4">
+                <h3 class="m-t-10">Good</h3>
+            </div>
+            <div class="col-sm-2 text-center">
+                <img src="img/AverageAsh.png" alt="" id="AverageRating" class="h-110 rating" data-rating="3">
+                <h3 class="m-t-10">Average</h3>
+            </div>
+            <div class="col-sm-2 text-center">
+                <img src="img/PoorAsh.png" alt="" id="PoorRating" class="h-110 rating" data-rating="2">
+                <h3 class="m-t-10">Poor</h3>
+            </div>
+            <div class="col-sm-2 text-center">
+                <img src="img/VeryPoorAsh.png" alt="" id="VeryPoorRating" class="h-110 rating" data-rating="1">
+                <h3 class="m-t-10">Very Poor</h3>
+            </div>
+
+            <div class="col-sm-12"><small id="ratingsHelp" class="form-text text-muted text-danger fs-22">Please select a rating</small></div>
+
+            <input type="hidden" id="selectedIncidence" value="">
+            <input type="hidden" id="selectedRating" value="">
+
+            <div class="col-sm-12 m-t-20 text-center">
+                <button class="btn btn-primary btn-lg card-raised w-d-50 btn-submit-rating" id="btn-submit-rating" type="submit"><i class="fas fa-spinner fa-spin now-ui-icons loader_refresh spin"></i> &nbsp;&nbsp; Submit Report</button>
+                <small id="btnSubmitReportHelp" class="form-text text-muted text-danger fs-22">Report Submission Failed, please try again</small>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="js/core/popper.min.js" type="text/javascript"></script>
+<script src="js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
+<script src="js/plugins/bootstrap-selectpicker.js" type="text/javascript"></script>
+
+<script>
+
+    function validateInput(){
+
+        //make sure a rating is chosen
+        if($("#selectedRating").val().length === 0){
+            $("#ratingsHelp").show()
+        }else {
+            $("#ratingsHelp").hide()
+        }
+
+        //make sure an incidence is selected
+        if($("#selectedIncidence").val().length === 0){
+            $("#incidenceHelp").show()
+        }else {
+            $("#incidenceHelp").hide()
+        }
+
+        //validate description
+        if ($("#description").val().length === 0){
+            $("#description").addClass("is-invalid");
+        }else{
+            $("#description").removeClass("is-invalid");
+        }
+
+        return $("#selectedIncidence").val().length === 0 || $("#selectedRating").val().length === 0 || $("#description").val().length === 0
+    }
+
+    $(document).ready(function () {
+
+        $(".fa-spinner").hide()
+        $("#btnSubmitReportHelp").hide()
+        $("#ratingsHelp").hide()
+        $("#incidenceHelp").hide()
+
+        //handle incidence click events
+        $(".incidence-card-box").click(function () {
+            //console.log("clicked incidence report")
+            $(".incidence-card-box").css("opacity", "0.4")
+            $(this).css("opacity", "1")
+            $("#selectedIncidence").val($(this).data("incidence"))
+            //console.log($("#selectedIncidence").val())
+        })
+
+        //handle ratings click events
+        $(".rating").click(function () {
+            console.log("clicked rating")
+            if($(this).data("rating") === 5){
+
+                //set selected icon to colored
+                $(this).attr("src", "img/Excellent.png")
+                //set the value of the selected rating
+                $("#selectedRating").val("5")
+
+                //set every other icon to ash color
+                $("#AverageRating").attr("src", "img/AverageAsh.png")
+                $("#GoodRating").attr("src", "img/GoodAsh.png")
+                $("#PoorRating").attr("src", "img/PoorAsh.png")
+                $("#VeryPoorRating").attr("src", "img/VeryPoorAsh.png")
+
+            }else if ($(this).data("rating") === 4) {
+
+                $(this).attr("src", "img/Good.png")
+                $("#selectedRating").val("4")
+
+                $("#ExcellentRating").attr("src", "img/ExcellentAsh.png")
+                $("#AverageRating").attr("src", "img/AverageAsh.png")
+                $("#PoorRating").attr("src", "img/PoorAsh.png")
+                $("#VeryPoorRating").attr("src", "img/VeryPoorAsh.png")
+
+            }else if ($(this).data("rating") === 3) {
+
+                $(this).attr("src", "img/Average.png")
+                $("#selectedRating").val("3")
+
+                $("#ExcellentRating").attr("src", "img/ExcellentAsh.png")
+                $("#GoodRating").attr("src", "img/GoodAsh.png")
+                $("#PoorRating").attr("src", "img/PoorAsh.png")
+                $("#VeryPoorRating").attr("src", "img/VeryPoorAsh.png")
+
+            }else if ($(this).data("rating") === 2) {
+
+                $(this).attr("src", "img/Poor.png")
+                $("#selectedRating").val("2")
+
+                $("#ExcellentRating").attr("src", "img/ExcellentAsh.png")
+                $("#AverageRating").attr("src", "img/AverageAsh.png")
+                $("#GoodRating").attr("src", "img/GoodAsh.png")
+                $("#VeryPoorRating").attr("src", "img/VeryPoorAsh.png")
+
+            }else if ($(this).data("rating") === 1) {
+
+                $(this).attr("src", "img/VeryPoor.png")
+                $("#selectedRating").val("1")
+
+                $("#ExcellentRating").attr("src", "img/ExcellentAsh.png")
+                $("#AverageRating").attr("src", "img/AverageAsh.png")
+                $("#PoorRating").attr("src", "img/PoorAsh.png")
+                $("#GoodRating").attr("src", "img/GoodAsh.png")
+            }
+        })
+        
+        //handle submit button click event
+        $("#btn-submit-rating").click(function () {
+
+            //hide error message area
+            $("#btnSubmitReportHelp").hide()
+
+            if (!validateInput()) {
+                $(".fa-spinner").show()
+                $('#btn-submit-rating').html("<i class=\"fas fa-spinner fa-spin now-ui-icons loader_refresh spin\"></i> &nbsp;&nbsp; Please wait...").attr("disabled", "disabled")
+
+                var report = new Object();
+                report.Title = "Report Case";
+                report.Description = $("#description").val();
+                report.INECRating = $("#selectedRating").val();
+                report.PhotoURL = "ggugyugytfyt";
+                // report.DateCreated = "08/24/2018";
+                //report.DateCreated = (new Date().getMonth() + 1) + "/" + new Date().getDate() + "/" + new Date().getFullYear();
+                report.FullAddress = "Full Address";
+                report.StreetAddress = "Street Address";
+                report.City = "Oba Ile, Akure";
+                report.State = "Ondo";
+                report.Longitude = "7.24213";
+                report.Latitude = "15.43453";
+                report.IncidenceTypesString = $("#selectedIncidence").val();
+                report.UserProfileId = "7c1f8c44-7b4e-4654-a1ac-074b3032c24c";
+                console.log(report);
+                if (report != null) {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://ireportapi.azurewebsites.net//api/Report",
+                        data: JSON.stringify(report),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response != null) {
+                                console.log(response);
+                                $("#btnSubmitReportHelp").removeClass("text-danger").addClass("text-success").text("Report Submitted successfully.").show()
+                                $('#btn-submit-rating').text("Submit Report")
+                                // save response here
+                                //redirect the user after 3seconds
+                                setTimeout(() =>{
+                                    window.location.href = "dashboard-with-reports.html";
+                                }, 3000)
+                            } else {
+                                $("#btnSubmitReportHelp").text("Report Submission Failed in onSuccess.").show()
+                                $('#btn-submit-rating').text("Submit Report").removeAttr("disabled")
+                                //alert("Something went wrong");
+                            }
+                        },
+                        failure: function (response) {
+                            $("#btnSubmitReportHelp").text("Report Submission Failed in onFailure.").show()
+                            $('#btn-submit-rating').text("Submit Report").removeAttr("disabled")
+                            console.log(response.responseText);
+                        },
+                        error: function (response) {
+                            $("#btnSubmitReportHelp").text("Report Submission Failed in onError.").show()
+                            $('#btn-submit-rating').text("Submit Report").removeAttr("disabled")
+                            console.log(response.responseText);
+                        }
+
+                    });
+                }
+
+            }
+
+        })
+        
+    })
+</script>
+
+</body>
+</html>

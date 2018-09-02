@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/now-ui-kit.css">
+    <link rel="stylesheet" href="css/ireport.css">
+    <link rel="stylesheet" href="css/font-sizes.css">
+    <link rel="stylesheet" href="css/margin-bottom.css">
+    <link rel="stylesheet" href="css/margin-top.css">
+    <link rel="stylesheet" href="css/padding-bottom.css">
+    <link rel="stylesheet" href="css/padding-top.css">
+</head>
+<body>
+
+<div class="app">
+    <form method="" action="">
+        <div class="card card-raised">
+            <div class="card-body p-0">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="text" value="" id="EmailAddress" placeholder="Email Address" class="form-control">
+                            <div class="invalid-feedback fs-20 text-left">
+                                Please enter a valid email address
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="password" value="" id="Password" placeholder="Password" class="form-control">
+                            <div class="invalid-feedback fs-20 text-left">
+                                Please enter a password
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 text-left">
+                <div class="form-check">
+                    <label class="form-check-label fs-20">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-sign"></span>
+                        Keep me logged in
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-6 text-right p-t-10">
+                <span class="fs-20" style="color: #0E6823; text-transform: capitalize">Forgot?</span>
+            </div>
+            <div class="col-sm-12 m-t-10">
+                <button class="btn btn-primary btn-lg" id="btn-login" type="submit"><i class="fas fa-spinner fa-spin now-ui-icons loader_refresh spin"></i> &nbsp;&nbsp; Log In</button>
+                <small id="btnLoginHelp" class="form-text text-muted text-danger fs-22">Log In Failed, please try again</small>
+            </div>
+            <div class="col-sm-12 text-center m-t-30">
+                <span class="fs-22 txt-cap">Don't Have Account?</span>&nbsp;&nbsp;<a href="register.html" class="app-color fs-22">SIGN UP</a>
+            </div>
+            <div class="col-sm-12 m-t-20 text-center">
+                <img src="img/InecLogo.png" alt="" style="height: 185%;">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<!--<script src="js/core/bootstrap.min.js" type="text/javascript"></script>-->
+<!--<script src="js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>-->
+<script type="text/javascript" src="js/axios.min.js"></script>
+
+<script>
+
+    function validateInput() {
+
+        //validate email address
+        if ($("#EmailAddress").val().length === 0){
+            $("#EmailAddress").addClass("is-invalid");
+        }else{
+            $("#EmailAddress").removeClass("is-invalid");
+        }
+        //validate Password
+        if ($("#Password").val().length === 0){
+            $("#Password").addClass("is-invalid");
+        }else{
+            $("#Password").removeClass("is-invalid");
+        }
+
+        return $("#EmailAddress").val().length === 0 || $("#Password").val().length === 0
+
+    }
+
+    $(document).ready(function(){
+
+        $(".fa-spinner").hide()
+        $("#btnLoginHelp").hide()
+
+        $('#btn-login').click(function(){
+            $("#btnLoginHelp").hide()
+            console.log('login clicked');
+
+            if (!validateInput()) {
+                $(".fa-spinner").show()
+                $('#btn-login').html("<i class=\"fas fa-spinner fa-spin now-ui-icons loader_refresh spin\"></i> &nbsp;&nbsp; Please wait...").attr("disabled", "disabled")
+
+                var login = new Object();
+                login.Email = $("#EmailAddress").val();
+                login.Password = $("#Password").val();
+                console.log(login);
+                if (login != null) {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://ireportapi.azurewebsites.net//api/Login",
+                        data: JSON.stringify(login),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response != null) {
+
+                                console.log(response);
+                                
+                                //check for successful login
+                                if (!response.includes("Invalid Email Address or Password")) {
+
+                                    $("#btnLoginHelp").removeClass("text-danger").addClass("text-success").text("Log In successful.").show()
+                                    $('#btn-login').text("Log In").removeAttr("disabled")
+                                    // save response here
+                                    //redirect the user after 3seconds
+                                    setTimeout(() =>{
+                                        //window.location.href = "dashboard.html";
+                                    }, 3000)
+
+                                }else{
+
+                                    $("#btnLoginHelp").text("Invalid Email Address or Password").show()
+                                    $('#btn-login').text("Log In").removeAttr("disabled")
+                                }
+
+                            } else {
+                                $("#btnLoginHelp").text("Log In Failed in onSuccess.").show()
+                                $('#btn-login').text("Log In").removeAttr("disabled")
+                                //alert("Something went wrong");
+                            }
+                        },
+                        failure: function (response) {
+                            $("#btnLoginHelp").text("Log In Failed in onSuccess.").show()
+                            $('#btn-login').text("Log In").removeAttr("disabled")
+                            //alert(response.responseText);
+                        },
+                        error: function (response) {
+                            $("#btnLoginHelp").text("Log In Failed in onSuccess.").show()
+                            $('#btn-login').text("Log In").removeAttr("disabled")
+                            //alert(response.responseText);
+                        }
+
+                    });
+                }
+
+            }
+        })
+    })
+
+
+
+</script>
+
+</body>
+</html>

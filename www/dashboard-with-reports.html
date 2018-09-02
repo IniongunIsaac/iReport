@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard with Reports</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/now-ui-kit.css">
+    <link rel="stylesheet" href="css/ireport.css">
+    <link rel="stylesheet" href="css/font-sizes.css">
+    <link rel="stylesheet" href="css/margin-bottom.css">
+    <link rel="stylesheet" href="css/margin-top.css">
+    <link rel="stylesheet" href="css/padding-bottom.css">
+    <link rel="stylesheet" href="css/padding-top.css">
+    <link rel="stylesheet" href="css/heights.css">
+    <link rel="stylesheet" href="css/padding.css">
+</head>
+<body class="bg-ash">
+
+<div class="row h-140 bg-app-color p-40">
+    <div class="col-sm-6 text-left"><h3 class="txt-white txt-cap fs-40">Reports</h3></div>
+    <div class="col-sm-6 text-right">
+        <img src="img/placeholder_person.png" alt="" style="width: 70px; height: 70px;"> <span class="txt-white fs-25">123456FF</span>
+    </div>
+</div>
+
+<div class="row p-30">
+    <div class="col-sm-12">
+        <ul class="nav nav-pills nav-pills-primary report-list-nav" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#previousReports" role="tablist">
+                    Previous
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#todayReports" role="tablist">
+                    Today
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content tab-space p-t-60 fs-30">
+            <div class="tab-pane" id="previousReports">
+                <div class="row" id="previousReportsRow">
+
+                </div>
+            </div>
+            <div class="tab-pane active" id="todayReports">
+                <div class="row" id="todayReportsRow">
+
+                    <div class="col-md-12 text-success text-center fs-40">
+                        <i class="fas fa-spinner fa-spin fs-40 now-ui-icons loader_refresh spin"></i> &nbsp;&nbsp; Loading Reports, please wait...
+                    </div>
+
+                    <!--<div class="col-sm-12">-->
+                        <!--<div class="card">-->
+                            <!--<div class="card-body p-20">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-sm-3 p-t-20">-->
+                                        <!--<div class="img-box p-10"><img src="img/placeholder_person.png" alt=""></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-sm-8">-->
+                                        <!--<h4 class="m-b-0 m-t-0">Peace</h4>-->
+                                        <!--<p class="m-b-0 fs-35">Aenean eu felis sit amet felis semper euismod. Aenean nec nibh.</p>-->
+                                        <!--<p>Aug 4 | 3:44pm</p>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-sm-1 p-t-80"><img src="img/Icons8MenuVertical.png" alt="" class="h-60"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-sm-12">-->
+                        <!--<div class="card">-->
+                            <!--<div class="card-body p-20">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-sm-3 p-t-20">-->
+                                        <!--<div class="img-box p-10"><img src="img/placeholder_person.png" alt=""></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-sm-8">-->
+                                        <!--<h4 class="m-b-0 m-t-0">Violence</h4>-->
+                                        <!--<p class="m-b-0 fs-35">Aenean eu felis sit amet felis semper euismod. Aenean nec nibh.</p>-->
+                                        <!--<p>Aug 4 | 3:44pm</p>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-sm-1 p-t-80"><img src="img/Icons8MenuVertical.png" alt="" class="h-60"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-bottom">
+    <ul class="nav nav-tabs justify-content-center nav-fill h-170 p-t-20 p-b-20" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#" role="tab">
+                <img src="img/cameragreen.png" alt="" class="h-55"><br> Camera
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#" role="tab">
+                <img src="img/report.png" alt="" class="h-55"> <br> Reports
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link p-0" data-toggle="tab" href="#" role="tab">
+                <img src="img/select.png" alt="" style="height: 200px; margin-top: -57px;">
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#" role="tab">
+                <img src="img/draft.png" alt="" class="h-55"><br> Draft
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#" role="tab">
+                <img src="img/menu.png" alt="" class="h-26" style="height: 23px;"><br> Menu
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="js/core/popper.min.js" type="text/javascript"></script>
+<script src="js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $.ajax({
+            type: "GET",
+            url: "http://ireportapi.azurewebsites.net//api/Report/7c1f8c44-7b4e-4654-a1ac-074b3032c24c",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response != null) {
+                    console.log(response);
+                    //iterate the list of reports returned for user
+                    var todayReportOutput = "", previousReportOutput = "";
+                    var currentDateString = (new Date().getMonth() + 1) + "/" + new Date().getDate() + "/" + new Date().getFullYear();
+                    $.each(response, function (key, value) {
+                        var reportDateString = value.DateCreated.split(" ")[0];
+                        if (currentDateString === reportDateString) {
+                            todayReportOutput += "<div class=\"col-sm-12\">\n" +
+                                "                        <div class=\"card\">\n" +
+                                "                            <div class=\"card-body p-20\">\n" +
+                                "                                <div class=\"row\">\n" +
+                                "                                    <div class=\"col-sm-3 p-t-20\">\n" +
+                                "                                        <div class=\"img-box p-10\"><img src=\"img/placeholder_person.png\" alt=\"\"></div>\n" +
+                                "                                    </div>\n" +
+                                "                                    <div class=\"col-sm-8\">\n" +
+                                "                                        <h4 class=\"m-b-0 m-t-0\">"+ value.Title +"</h4>\n" +
+                                "                                        <p class=\"m-b-0 fs-35\">"+ ((value.Description.length > 56) ? (value.Description.substring(0, 56) + "...") : value.Description) +"</p>\n" +
+                                "                                        <p>"+ getMonthAbbreviation(value.DateCreated) +"</p>\n" +
+                                "                                    </div>\n" +
+                                "                                    <div class=\"col-sm-1 p-t-80\"><img src=\"img/Icons8MenuVertical.png\" alt=\"\" class=\"h-60\"></div>\n" +
+                                "                                </div>\n" +
+                                "                            </div>\n" +
+                                "                        </div>\n" +
+                                "                    </div>";
+                        }else{
+                            previousReportOutput += "<div class=\"col-sm-12\">\n" +
+                                "                        <div class=\"card\">\n" +
+                                "                            <div class=\"card-body p-20\">\n" +
+                                "                                <div class=\"row\">\n" +
+                                "                                    <div class=\"col-sm-3 p-t-20\">\n" +
+                                "                                        <div class=\"img-box p-10\"><img src=\"img/placeholder_person.png\" alt=\"\"></div>\n" +
+                                "                                    </div>\n" +
+                                "                                    <div class=\"col-sm-8\">\n" +
+                                "                                        <h4 class=\"m-b-0 m-t-0\">"+ value.Title +"</h4>\n" +
+                                "                                        <p class=\"m-b-0 fs-35\">"+ ((value.Description.length > 56) ? (value.Description.substring(0, 56) + "...") : value.Description) +"</p>\n" +
+                                "                                        <p>"+ getMonthAbbreviation(value.DateCreated) +"</p>\n" +
+                                "                                    </div>\n" +
+                                "                                    <div class=\"col-sm-1 p-t-80\"><img src=\"img/Icons8MenuVertical.png\" alt=\"\" class=\"h-60\"></div>\n" +
+                                "                                </div>\n" +
+                                "                            </div>\n" +
+                                "                        </div>\n" +
+                                "                    </div>";
+                        }
+
+                    });
+                    //populate today's reports tab
+                    if (todayReportOutput.length === 0){
+                        $("#todayReportsRow").html("<div class=\"col-md-12 text-success text-center fs-40\"> No Reports for Today. </div>")
+                    } else{
+                        $("#todayReportsRow").html(todayReportOutput)
+                    }
+                    //populate previous reports tab
+                    if (previousReportOutput.length === 0){
+                        $("#previousReportsRow").html("<div class=\"col-md-12 text-success text-center fs-40\"> No Previous Reports. </div>")
+                    } else{
+                        $("#previousReportsRow").html(previousReportOutput)
+                    }
+
+                } else {
+                    alert("Something went wrong");
+                }
+            },
+            failure: function (response) {
+                alert("in Failure: " + response);
+            },
+            error: function (response) {
+                alert("in error: " + response);
+            }
+
+        });
+
+    })
+
+    //date format returned from server: "8/24/2018 12:00:00 AM"
+    function getMonthAbbreviation(date) {
+
+        var monthName = "";
+
+        switch (date.split("/")[0]){
+            case "1":
+                monthName = "Jan.";
+                break;
+            case "2":
+                monthName = "Feb."
+                break;
+            case "3":
+                monthName = "Mar.";
+                break;
+            case "4":
+                monthName = "Apr."
+                break;
+            case "5":
+                monthName = "May.";
+                break;
+            case "6":
+                monthName = "Jun."
+                break;
+            case "7":
+                monthName = "Jul.";
+                break;
+            case "8":
+                monthName = "Aug."
+                break;
+            case "9":
+                monthName = "Sep.";
+                break;
+            case "10":
+                monthName = "Oct."
+                break;
+            case "11":
+                monthName = "Nov.";
+                break;
+            case "12":
+                monthName = "Dec."
+                break;
+        }
+
+        return monthName + " " + date.split("/")[1] + ", " + date.split("/")[2].split(" ")[0] + " | " + date.split(" ")[1].split(":")[0] + ":" + date.split(" ")[1].split(":")[1] + " " + date.split(" ")[2];
+    }
+
+</script>
+
+</body>
+</html>
